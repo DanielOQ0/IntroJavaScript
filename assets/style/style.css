@@ -5,5 +5,15 @@
 .ctitle {
   background-color: rgb(231, 2, 109);
 }
+#form1 {
+  display: flex;
+  flex-direction: row;
+}
+.bg-gray {
+  background-color: rgb(231, 225, 225);
+}
 @media (max-width: 640px) {
+  #form1 {
+    flex-direction: column;
+  }
 }
