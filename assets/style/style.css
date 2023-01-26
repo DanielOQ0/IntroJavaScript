@@ -1,0 +1,9 @@
+#logo {
+  height: 2rem;
+  width: auto;
+}
+.ctitle {
+  background-color: rgb(231, 2, 109);
+}
+@media (max-width: 640px) {
+}
