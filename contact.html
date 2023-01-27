@@ -60,12 +60,12 @@
               >
               <a
                 class="btn btn-dark nav-link border my-2 my-lg-4 mx-lg-3 mx-auto p-2"
-                href="#"
+                href="./pastEvents.html"
                 >Past Events</a
               >
               <a
                 class="btn btn-dark nav-link border my-2 my-lg-4 mx-lg-3 mx-auto p-2"
-                href="./contact.html"
+                href="#"
                 >Contact</a
               >
               <a
@@ -78,16 +78,87 @@
         </div>
       </nav>
       <section class="bpink py-3 container-fluid d-flex justify-content-center">
-        <h1>Contact</h1>
+        <h1>Contact Us</h1>
       </section>
     </header>
-    <main></main>
+    <main class="d-flex justify-content-center">
+      <form id="formContact" class="m-2 py-2 px-3 border border-dark rounded">
+        <div class="mb-3">
+          <label for="contactInput1" class="form-label">Name:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="contactInput1"
+            placeholder="name" />
+        </div>
+        <div class="mb-3">
+          <label for="contactInput2" class="form-label">Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="contactInput2"
+            placeholder="name@example.com" />
+        </div>
+        <div class="mb-3">
+          <label for="contactTextarea1" class="form-label">Menssage</label>
+          <textarea
+            class="form-control"
+            id="contactTextarea1"
+            rows="3"></textarea>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button
+            type="button"
+            class="btn btn-dark mb-3"
+            data-bs-toggle="modal"
+            data-bs-target="#formModal">
+            Sumit
+          </button>
+        </div>
+      </form>
+      <div
+        class="modal fade"
+        id="formModal"
+        tabindex="-1"
+        aria-labelledby="formModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="formModalLabel">Enviado</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Su información de contacto ha sido enviada.
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <footer
       class="px-4 bpink container-fluid d-flex justify-content-between align-items-center">
       <div class="m-2">
-        <i class="bi bi-instagram mx-2" id="l1"></i>
-        <i class="bi bi-facebook mx-2"></i>
-        <i class="bi bi-whatsapp mx-2"></i>
+        <a href="https://www.instagram.com" target="_blank"
+          ><i class="bi bi-instagram mx-2" id="l1"></i
+        ></a>
+        <a href="https://www.facebook.com" target="_blank"
+          ><i class="bi bi-facebook mx-2"></i
+        ></a>
+        <a href="https://wa.me/3163301963" target="_blank"
+          ><i class="bi bi-whatsapp mx-2"></i
+        ></a>
       </div>
       <h4>Cohort 43</h4>
     </footer>
