@@ -35,6 +35,17 @@ footer i {
 #cardDescription {
   width: 360px;
 }
+table {
+  background-color: rgb(213, 208, 208);
+  box-shadow: 5px 5px 10px 1px black;
+}
+table,
+tr,
+th,
+td {
+  border: 4px solid white;
+  border-collapse: collapse;
+}
 @media (max-width: 640px) {
   #form1 {
     flex-direction: column;
@@ -47,7 +58,6 @@ footer i {
     background-color: rgb(213, 208, 208);
   }
 }
-
 @media (max-width: 850px) {
   #cardView {
     flex-direction: column;
