@@ -26,7 +26,15 @@ footer i {
   width: 50vw;
   background-color: rgb(213, 208, 208);
 }
-
+#cardView {
+  height: 360px;
+}
+#cardImg {
+  width: 360px;
+}
+#cardDescription {
+  width: 360px;
+}
 @media (max-width: 640px) {
   #form1 {
     flex-direction: column;
@@ -37,5 +45,18 @@ footer i {
   #formContact {
     width: 80vw;
     background-color: rgb(213, 208, 208);
+  }
+}
+
+@media (max-width: 850px) {
+  #cardView {
+    flex-direction: column;
+    height: auto;
+  }
+  #cardImg {
+    width: auto;
+  }
+  #cardDescription {
+    width: auto;
   }
 }
