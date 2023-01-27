@@ -1,8 +1,15 @@
+/* * {
+   border: 1px solid red; 
+} */
 #logo {
   height: 2rem;
   width: auto;
 }
-.ctitle {
+#btnw {
+  height: 2.5rem;
+  width: auto;
+}
+.bpink {
   background-color: rgb(231, 2, 109);
 }
 #form1 {
@@ -12,8 +19,14 @@
 .bg-gray {
   background-color: rgb(231, 225, 225);
 }
+footer i {
+  font-size: 50px;
+}
 @media (max-width: 640px) {
   #form1 {
     flex-direction: column;
+  }
+  footer i {
+    font-size: 30px;
   }
 }
