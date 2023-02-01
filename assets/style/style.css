@@ -26,6 +26,12 @@ footer i {
   width: 50vw;
   background-color: rgb(213, 208, 208);
 }
+#contactTextarea1 {
+  height: 10rem;
+}
+#mainC {
+  min-height: 62vh;
+}
 #cardView {
   height: 360px;
 }
