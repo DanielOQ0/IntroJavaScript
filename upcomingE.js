@@ -1,51 +1,32 @@
-const container = document.querySelector(".containerCard");
-let cardsInfo = data.events;
-let allCards = "";
-let currentDateArray = data.currentDate.split("-");
-let currentDate = new Date(
-  currentDateArray[0],
-  currentDateArray[1] - 1,
-  currentDateArray[2]
-);
-for (cardInfo of cardsInfo) {
-  let cardDateArray = cardInfo.date.split("-");
-  let cardDate = new Date(
-    cardDateArray[0],
-    cardDateArray[1] - 1,
-    cardDateArray[2]
-  );
-  if (cardDate > currentDate) {
-    allCards += `<div class="card m-3" style="width: 18rem">
-    <img
-      src=${cardInfo.image}
-      class="card-img-top"
-      alt=${cardInfo.name} />
-    <div class="card-body">
-      <h5 class="card-title">${cardInfo.name}</h5>
-      <p class="card-text">
-        <span class="fw-bold">Date:</span> ${cardInfo.date}
-      </p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        <span class="fw-bold">Category:</span> ${cardInfo.category}
-      </li>
-      <li class="list-group-item">
-        <span class="fw-bold">Capacity:</span> ${cardInfo.capacity}
-      </li>
-    </ul>
-    <div class="card-body d-flex justify-content-between">
-      <p class="card-text"><span class="fw-bold">Price: </span> $${cardInfo.price}</p>
-      <a
-        href="./details.html"
-        class="btn btn-dark d-flex align-items-center align-items-center"
-        id="btnw"
-        >See More</a
-      >
-    </div>
-  </div>`;
-  } else {
-    continue;
-  }
-}
-container.innerHTML = allCards;
+import {
+  addCard,
+  addCheckbox,
+  checkBoxFilter,
+  nameFilter,
+  filterDate,
+} from "./module/function.js";
+//variables
+const $container = document.querySelector(".containerCard");
+const $search = document.getElementById("search");
+const $checkboxContainer = document.getElementById("checkboxCategory");
+const cardsInfo = data.events;
+let searchValue = "";
+//inicializar pagina
+const cardsFilter = filterDate(cardsInfo, data.currentDate, ">");
+console.log(cardsFilter);
+addCard(cardsFilter, $container);
+const category = [...new Set(cardsFilter.map((event) => event.category))];
+addCheckbox(category, $checkboxContainer);
+//eventos
+$checkboxContainer.addEventListener("change", (e) => {
+  const leakedCheckBox = checkBoxFilter(cardsFilter);
+  const leakedSearch = nameFilter(leakedCheckBox, searchValue);
+  addCard(leakedSearch, $container);
+});
+$search.addEventListener("keyup", (e) => {
+  searchValue = e.target.value.replaceAll(" ", "").toLowerCase();
+  const leakedSearch = nameFilter(cardsFilter, searchValue);
+  const leakedCheckBox = checkBoxFilter(leakedSearch);
+  addCard(leakedCheckBox, $container);
+});
+$search.addEventListener("submit", (e) => e.preventDefault());

@@ -18,6 +18,9 @@
       href="./assets/image/flavicon.png"
       type="image/x-icon" />
     <link rel="stylesheet" href="./assets/style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </head>
   <body>
     <header>
@@ -49,27 +52,27 @@
             id="navbarNav">
             <div class="navbar-nav">
               <a
-                class="btn btn-dark nav-link border my-2 my-lg-4 mx-lg-3 mx-auto p-2"
+                class="float btn btn-dark nav-link border my-2 my-lg-4 mx-lg-3 mx-auto p-2"
                 href="./index.html"
                 >Home</a
               >
               <a
-                class="btn btn-dark nav-link border my-2 my-lg-4 mx-lg-3 mx-auto p-2"
+                class="float btn btn-dark nav-link border my-2 my-lg-4 mx-lg-3 mx-auto p-2"
                 href="./upcomingEvents.html"
                 >Upcoming Events</a
               >
               <a
-                class="btn btn-dark nav-link border my-2 my-lg-4 mx-lg-3 mx-auto p-2"
+                class="float btn btn-dark nav-link border my-2 my-lg-4 mx-lg-3 mx-auto p-2"
                 href="./pastEvents.html"
                 >Past Events</a
               >
               <a
-                class="btn btn-dark nav-link border my-2 my-lg-4 mx-lg-3 mx-auto p-2"
+                class="float btn btn-dark nav-link border my-2 my-lg-4 mx-lg-3 mx-auto p-2"
                 href="#"
                 >Contact</a
               >
               <a
-                class="btn btn-dark nav-link border my-2 my-lg-4 mx-lg-3 mx-auto p-2"
+                class="float btn btn-dark nav-link border my-2 my-lg-4 mx-lg-3 mx-auto p-2"
                 href="./stats.html"
                 >Stats</a
               >
@@ -81,8 +84,8 @@
         <h1>Contact Us</h1>
       </section>
     </header>
-    <main id="mainC" class="d-flex justify-content-center">
-      <form id="formContact" class="m-2 py-2 px-3 border border-dark rounded">
+    <main class="d-flex justify-content-center">
+      <form id="formContact" class="m-4 py-2 px-3 border border-dark rounded">
         <div class="mb-3">
           <label for="contactInput1" class="form-label">Name:</label>
           <input
@@ -112,7 +115,7 @@
             class="btn btn-dark mb-3"
             data-bs-toggle="modal"
             data-bs-target="#formModal">
-            Sumit
+            Submit
           </button>
         </div>
       </form>
@@ -125,16 +128,14 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="formModalLabel">Enviado</h1>
+              <h1 class="modal-title fs-5" id="formModalLabel">Sent</h1>
               <button
                 type="button"
                 class="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-              Su información de contacto ha sido enviada.
-            </div>
+            <div class="modal-body">Your contact information has been sent</div>
             <div class="modal-footer">
               <button
                 type="button"
@@ -160,7 +161,7 @@
           ><i class="bi bi-whatsapp mx-2"></i
         ></a>
       </div>
-      <h4>Cohort 43</h4>
+      <h4 class="textc">Cohort 43</h4>
     </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
