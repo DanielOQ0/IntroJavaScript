@@ -14,9 +14,10 @@ export function checkBoxFilter(list) {
   }
 }
 export function nameFilter(list, value) {
-  return list.filter((event) =>
-    event.name.replaceAll(" ", "").toLowerCase().includes(value)
-  );
+  return list.filter((event) => {
+    let nameArray = event.name.toLowerCase().split(" ");
+    return nameArray.find((name) => name.startsWith(value));
+  });
 }
 export function addCheckbox(list, element) {
   element.innerHTML = "";
@@ -24,9 +25,10 @@ export function addCheckbox(list, element) {
   let i = 0;
   list.forEach((element) => {
     i++;
-    template += `<div class="grow">
+    template += `<div class="grow form-check form-switch">
     <input
       class="form-check-input"
+      role="switch"
       type="checkbox"
       name=${element}
       id="fCheck${i}"
@@ -86,3 +88,5 @@ export function filterDate(list, date, type) {
     eval(event.date.replaceAll("-", "") + type + date.replaceAll("-", ""))
   );
 }
+export function addRowStats(list, element) {}
+export function addRowCategory(list, element) {}
