@@ -10,7 +10,6 @@ async function getData(url) {
     const response = await fetch(url);
     const data = await response.json();
     const card = data.events.find((event) => event._id == id);
-    console.log(card);
     $container.innerHTML = `<img
       src=${card.image}
       class="rounded my-4 mx-3"
