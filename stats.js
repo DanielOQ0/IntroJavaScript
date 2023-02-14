@@ -1,25 +1,17 @@
-import {filterDate} from "./module/function.js";
+import {filterDate, urlApi, getData} from "./module/function.js";
 //variables
 const $eTable = document.getElementById("eStats");
 const $uTable = document.getElementById("uStats");
 const $pTable = document.getElementById("pStats");
-const urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
 //inicializar pagina
-getData(urlApi);
-async function getData(url) {
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    const cardsInfo = data.events;
-    addRow(eStats(cardsInfo), $eTable);
-    const uEvents = filterDate(cardsInfo, data.currentDate, ">");
-    const pEvents = filterDate(cardsInfo, data.currentDate, "<");
-    addRow(eStatsCategory(uEvents), $uTable);
-    addRow(eStatsCategory(pEvents), $pTable);
-  } catch {
-    console.log(error);
-  }
-}
+getData(urlApi).then((data) => {
+  const cardsInfo = data.events;
+  addRow(eStats(cardsInfo), $eTable);
+  const uEvents = filterDate(cardsInfo, data.currentDate, ">");
+  const pEvents = filterDate(cardsInfo, data.currentDate, "<");
+  addRow(eStatsCategory(uEvents), $uTable);
+  addRow(eStatsCategory(pEvents), $pTable);
+});
 //Funciones
 function addRow(list, element) {
   element.innerHTML = "";

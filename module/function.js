@@ -1,9 +1,10 @@
+//variables
+export const urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
 //funciones
 export function checkBoxFilter(list) {
-  let categoryFilter = [];
   const $checkBox = document.querySelectorAll('input[type="checkbox"]:checked');
-  $checkBox.forEach(
-    (event, index) => (categoryFilter[index] = event.value.toLowerCase())
+  let categoryFilter = [...$checkBox].map((element) =>
+    element.value.toLowerCase()
   );
   if (categoryFilter.length != 0) {
     return list.filter((event) =>
@@ -87,4 +88,13 @@ export function filterDate(list, date, type) {
   return list.filter((event) =>
     eval(event.date.replaceAll("-", "") + type + date.replaceAll("-", ""))
   );
+}
+export async function getData(url) {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 }
