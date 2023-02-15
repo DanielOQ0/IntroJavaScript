@@ -51,7 +51,7 @@ export function addCard(list, element) {
           id="cImg"
           src=${card.image}
           class="card-img-top"
-          alt=${card.name} />
+          alt=${card.name.replaceAll(" ", "")} />
         <div class="card-body">
           <h5 class="card-title">${card.name}</h5>
           <p class="card-text">
@@ -67,7 +67,9 @@ export function addCard(list, element) {
           </li>
         </ul>
         <div class="card-body d-flex justify-content-between">
-          <p class="card-text"><span class="fw-bold">Price: </span> $${card.price}</p>
+          <p class="card-text"><span class="fw-bold">Price: </span> $${
+            card.price
+          }</p>
           <a
             href="./details.html?id=${card._id}"
             class="btn btn-dark d-flex align-items-center align-items-center"
